@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const path = require("path");
+const dns = require("dns");
 const bodyParser = require("body-parser");
 const nanoid = require("nanoid");
 const { MongoClient } = require("mongodb");
@@ -52,6 +53,23 @@ app.post("/new", (req, res) => {
       .catch(console.error);
   });
 });
+
+app.get("/:short_id", (req, res) => {
+  const shortId = req.params.short_id;
+
+  const { db } = req.app.locals;
+  checkIfShortIdExists(db, shortId)
+    .then(doc => {
+      if (doc === null)
+        return res.send("Uh oh. We could not find a link at that URL");
+
+      res.redirect(doc.originalUrl);
+    })
+    .catch(console.error);
+});
+
+const checkIfShortIdExists = (db, code) =>
+  db.collection("shortenedURLs").findOne({ short_id: code });
 
 const shortenURL = (db, url) => {
   const shortenedURLs = db.collection("shortenedURLs");

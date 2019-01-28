@@ -1,0 +1,22 @@
+{
+  "name": "url-shortener",
+  "version": "0.1.0",
+  "description": "A URL shortener built with Nodejs and MongoDB",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "11.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikeattara/url-shortener.git"
+  },
+  "author": "Mike Perry Y Attara <mpyebattara@gmail.com>",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/mikeattara/url-shortener/issues"
+  },
+  "homepage": "https://github.com/mikeattara/url-shortener#readme"
+}

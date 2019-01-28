@@ -1,8 +1,9 @@
 require("dotenv").config();
-
-const express = require("express");
+// Node built-in modules
 const path = require("path");
 const dns = require("dns");
+// NPM modules
+const express = require("express");
 const bodyParser = require("body-parser");
 const nanoid = require("nanoid");
 const { MongoClient } = require("mongodb");

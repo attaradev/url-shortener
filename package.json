@@ -4,7 +4,7 @@
   "description": "A URL shortener built with Nodejs and MongoDB",
   "main": "src/server.js",
   "scripts": {
-    "start": "npx nodemon src/server.js"
+    "start": "npx nodemon server/index.js"
   },
   "engines": {
     "node": "11.8.0"
